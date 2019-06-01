@@ -1,0 +1,13 @@
+//@import 'partials/reset';
+@import 'partials/variables';
+@import 'partials/functions';
+@import 'partials/mixins';
+
+.app {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+@font-face {
+    font-family: KiloGram;
+    src: url('../assets/fonts/KiloGram_KG.otf');
+}
