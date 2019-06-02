@@ -8,7 +8,6 @@
   height: 100vh;
   padding: 3rem 0 5rem 3rem;
   overflow: hidden;
-
   @media only screen and (min-width: 768px) {
     position: fixed;
     width: 50vw;
@@ -141,11 +140,14 @@ button:hover::before {
   transform: scaleX(1);
 }
 
-.scroll-snap-container {
-  height: 100vh;
-}
-
 .side-content {
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+
   @media only screen and (min-width: 768px) {
     margin-left: 50vw;
   }

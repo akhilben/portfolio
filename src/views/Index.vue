@@ -38,26 +38,24 @@
         </div>
     </section>
     <section class="side-content">
-      <vue-scroll-snap>
-        <div class="side-card gradient-white">
-          <div class="blob5"></div>
-          <div class="blob4"></div>
-          <div class="inner-card gradient-white">
-            <div class="card-content">
-              <img src="src/assets/images/avataaars.svg" alt="me">
-              <h2 class="mt-3 sub-ttl">I AM A</h2>
-              <div class="main-ttl">
-                <h1 class="front-end">FRONT-END</h1>
-                <h1 class="engineer">ENGINEER</h1>
-              </div>
-              <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
+      <div class="side-card gradient-white">
+        <div class="blob5"></div>
+        <div class="blob4"></div>
+        <div class="inner-card gradient-white">
+          <div class="card-content">
+            <img src="src/assets/images/avataaars.svg" alt="me">
+            <h2 class="mt-3 sub-ttl">I AM A</h2>
+            <div class="main-ttl">
+              <h1 class="front-end">FRONT-END</h1>
+              <h1 class="engineer">ENGINEER</h1>
             </div>
+            <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
           </div>
         </div>
-        <div class="side-card">
-          <div class="inner-card"></div>
-        </div>
-      </vue-scroll-snap>
+      </div>
+      <div class="side-card">
+        <div class="inner-card"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -67,11 +65,9 @@ import api from "@API";
 
 import "./Index.scss";
 
-import VueScrollSnap from "vue-scroll-snap";
-
 export default {
   name: "Index",
-  components: {VueScrollSnap},
+  components: {},
   data() {
     return {
       isMenuActive: false
