@@ -11,6 +11,7 @@ import { enableAnalytics, analyticsKey, disableAnalyticsInDebug } from './config
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -20,6 +21,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(
   faBars,
   faEnvelope,
+  faTimes,
   faAngleDoubleDown,
   faGithub,
   faLinkedin,

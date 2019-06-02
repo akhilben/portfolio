@@ -5,9 +5,19 @@
         <div class="blob2"></div>
         <div class="blob3"></div>
         <div class="inner-card gradient-blue">
-          <a class="menu">
-            <font-awesome-icon icon="bars" />
-          </a>
+          <div class="menu" v-bind:class="{ active: isMenuActive }">
+            <a class="icon" v-on:click="onMenuClick()">
+              <font-awesome-icon :icon="isMenuActive ? 'times' : 'bars'" />
+            </a>
+            <nav>
+              <ul>
+                <li><a class="active">Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Skills</a></li>
+                <li><a>Projects</a></li>
+              </ul>
+            </nav>
+          </div>
           <div class="card-content">
             <h2 class="sub-ttl">HELLO, I AM</h2>
             <div class="main-ttl">
@@ -24,7 +34,7 @@
             <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
             <a><font-awesome-icon icon="envelope" size="2x"/></a>
           </div>
-          <p>©Copyright 2019, Akhil Ben.</p>
+          <p>© Copyright 2019, Akhil Ben.</p>
         </div>
     </section>
     <section class="side-content">
@@ -58,19 +68,14 @@ export default {
   components: {},
   data() {
     return {
-      title: "Index page !",
-      articles: []
+      isMenuActive: false
     };
   },
-  created() {
-    api
-      .get(`http://jsonplaceholder.typicode.com/posts`)
-      .then(response => {
-        this.articles = response.data;
-      })
-      .catch(e => {
-        console.error(e);
-      });
+  methods: {
+    onMenuClick() {
+      console.log('here');
+      this.isMenuActive = !this.isMenuActive;
+    }
   }
 };
 </script>

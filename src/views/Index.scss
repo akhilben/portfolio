@@ -8,11 +8,12 @@
   height: 100vh;
   padding: 3rem 0 5rem 3rem;
   overflow: hidden;
-  
+
   @media only screen and (min-width: 768px) {
     position: fixed;
     width: 50vw;
-  } 
+  }
+  
 
   .card-content {
     text-align: center;
@@ -67,10 +68,9 @@
     p {
       margin: 1rem;
       text-align: center;
-      color: #ffffffb6;
+      color: #ffffffce;
       font-weight: 300;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
+      font-size: 0.75rem;
     }
   }
 }
@@ -245,23 +245,97 @@ button:hover::before {
   position: relative;
 
   .menu {
-    position: absolute;
-    left: 30px;
-    top: 30px;
-    background: #FFFFFF;
-    padding: 9px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 
-
-    transition: transform 0.5s;
-
-    &:hover {
+    .icon {
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      cursor: pointer;
+      padding: 9px 10px;
       box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
-      transform: translate(0px, -5px);
+      z-index: 9;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        // transform: translate(0px, -5px);
+        animation: rotating 1s ease-in-out;
+      }
     }
+    
+    nav {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 0;
+      background: #FFFFFF;
+      transition: 1.5s all;
+      z-index: 1;
+
+      ul {
+        padding: 2rem 0 4rem 5rem;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: 2s all;
+
+        li {
+          margin: 1.85rem;
+          font-size: 1.65rem;
+          font-weight: 600;
+          
+          a {
+            color: #1c60ff;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              bottom: 0;
+              left: -0.25em;
+              right: -0.25em;
+              background-image: linear-gradient(90deg, #2C66ED 0%, #30CDE3 100%);
+              transform-origin: center right;
+              transform: scaleX(0);
+              transition: transform 0.2s ease-in-out;
+            }
+
+            &:hover, &.active {
+              color: #ffffff;
+              &::before {
+                transform: scaleX(1);
+                transform-origin: center left;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.active {
+      nav {
+        border-radius: 0 0 300px 0;
+        display: block;
+        width: 70vw;
+
+        ul {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        @media only screen and (min-width: 768px) {
+          width: 35vw;
+        }
+      }
+    }
+
+
   }
 }
 
