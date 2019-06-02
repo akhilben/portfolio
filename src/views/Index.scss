@@ -83,6 +83,7 @@ button {
   outline: none;
   background: none;
   padding: 1rem 5rem;
+  outline: none !important;
 
   &.btn-white {
     color: #FFFFFF;
@@ -140,6 +141,10 @@ button:hover::before {
   transform: scaleX(1);
 }
 
+.scroll-snap-container {
+  height: 100vh;
+}
+
 .side-content {
   @media only screen and (min-width: 768px) {
     margin-left: 50vw;
@@ -148,6 +153,8 @@ button:hover::before {
   .side-card {
     height: 100vh;
     padding: 3rem 3rem 5rem 0;
+    position: relative;
+    scroll-snap-align: start;
 
     .card-content {
       text-align: center;
@@ -225,15 +232,34 @@ button:hover::before {
 }
 
 .blob3 {
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  border-radius: 66% 70% 53% 73% / 82% 100% 42% 52% ;
   background-image: linear-gradient(-180deg, #2C66ED 0%, #30CDE3 100%);
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
   right: 20px;
-  height: 100px;
-  width: 100px;
-  // transform: rotate(80deg);
+  height: 120px;
+  width: 120px;
   animation: rotating 10s linear infinite;
+}
+
+.blob4 {
+  border-radius: 100% 10% 28% 0% / 100% 0% 0% 3%;
+  background-image: linear-gradient(270deg, #2C66ED 0%, #30CDE3 100%);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 120px;
+  width: 140px;
+}
+
+.blob5 {
+  border-radius: 87% 0% 28% 0% / 100% 0% 0% 0% ;
+  background-image: linear-gradient(360deg, rgb(25, 141, 187) 0%, #30CDE3 100%);
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+  height: 80px;
+  width: 100px;
 }
 
 .inner-card {
@@ -254,14 +280,22 @@ button:hover::before {
       border-radius: 20px;
       cursor: pointer;
       padding: 9px 10px;
-      box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
       z-index: 9;
       display: flex;
       align-items: center;
+      transform: rotate(0deg);
+      transition: 1s transform;
 
       &:hover {
-        // transform: translate(0px, -5px);
-        animation: rotating 1s ease-in-out;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
+      }
+
+      &.front {
+        transform: rotate(360deg);
+      }
+
+      &.back {
+        transform: rotate(0deg);
       }
     }
     
@@ -271,7 +305,7 @@ button:hover::before {
       top: 20px;
       width: 0;
       background: #FFFFFF;
-      transition: 1.5s all;
+      transition: 1.2s all;
       z-index: 1;
 
       ul {
@@ -279,7 +313,7 @@ button:hover::before {
         list-style: none;
         opacity: 0;
         visibility: hidden;
-        transition: 2s all;
+        transition: opacity 1.4s ease-in, visibility 0.4s ease-out;
 
         li {
           margin: 1.85rem;

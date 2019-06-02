@@ -6,7 +6,7 @@
         <div class="blob3"></div>
         <div class="inner-card gradient-blue">
           <div class="menu" v-bind:class="{ active: isMenuActive }">
-            <a class="icon" v-on:click="onMenuClick()">
+            <a class="icon" v-bind:class="{ front: isMenuActive,  back: !isMenuActive}" v-on:click="onMenuClick()">
               <font-awesome-icon :icon="isMenuActive ? 'times' : 'bars'" />
             </a>
             <nav>
@@ -38,22 +38,26 @@
         </div>
     </section>
     <section class="side-content">
-      <div class="side-card gradient-white">
-        <div class="inner-card gradient-white">
-          <div class="card-content">
-            <img src="src/assets/images/avataaars.svg" alt="me">
-            <h2 class="mt-3 sub-ttl">I AM A</h2>
-            <div class="main-ttl">
-              <h1 class="front-end">FRONT-END</h1>
-              <h1 class="engineer">ENGINEER</h1>
+      <vue-scroll-snap>
+        <div class="side-card gradient-white">
+          <div class="blob5"></div>
+          <div class="blob4"></div>
+          <div class="inner-card gradient-white">
+            <div class="card-content">
+              <img src="src/assets/images/avataaars.svg" alt="me">
+              <h2 class="mt-3 sub-ttl">I AM A</h2>
+              <div class="main-ttl">
+                <h1 class="front-end">FRONT-END</h1>
+                <h1 class="engineer">ENGINEER</h1>
+              </div>
+              <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
             </div>
-            <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
           </div>
         </div>
-      </div>
-      <div class="side-card">
-        <div class="inner-card"></div>
-      </div>
+        <div class="side-card">
+          <div class="inner-card"></div>
+        </div>
+      </vue-scroll-snap>
     </section>
   </div>
 </template>
@@ -63,9 +67,11 @@ import api from "@API";
 
 import "./Index.scss";
 
+import VueScrollSnap from "vue-scroll-snap";
+
 export default {
   name: "Index",
-  components: {},
+  components: {VueScrollSnap},
   data() {
     return {
       isMenuActive: false
