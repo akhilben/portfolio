@@ -27,7 +27,7 @@ const config = {
   devtool: sourceMap ? 'cheap-module-eval-source-map' : undefined,
   module: {
     rules: [
-      { test: /\.(png|woff|woff2|otf|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+      { test: /\.(woff|woff2|otf|ttf)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.css$/,
         use: [

@@ -7,9 +7,12 @@
 .main-content {
   height: 100vh;
   padding: 3rem 0 5rem 3rem;
-  position: fixed;
   overflow: hidden;
-  width: 50vw;
+  
+  @media only screen and (min-width: 768px) {
+    position: fixed;
+    width: 50vw;
+  } 
 
   .card-content {
     text-align: center;
@@ -43,12 +46,12 @@
   .footer {
     width: 100%;
     margin-top: 2.2rem;
-    padding: 0 4rem;
     position: relative;
 
     .social {
       display: flex;
       justify-content: space-evenly;
+      padding: 0 4rem;
 
       a {
         cursor: pointer;
@@ -72,43 +75,64 @@
   }
 }
 
-// .outline-btn {
-//   background: none;
-//   border: 2px solid #FFFFFF;
-//   padding: 1rem 6rem;
-//   color: #FFFFFF;
-// }
-
 button {
   z-index: 1;
   position: relative;
   font-size: inherit;
   font-family: inherit;
-  color: white;
   outline: none;
   background: none;
-  border: 2px solid #FFFFFF;
-  padding: 1rem 6rem;
-  color: #FFFFFF;
-}
+  padding: 1rem 5rem;
 
-button::before {
-  content: '';
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #FFFFFF;
-  transform-origin: center right;
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
+  &.btn-white {
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      background-color: #FFFFFF;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform-origin: center right;
+      transform: scaleX(0);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  &.btn-green {
+    color: #40D6D1;
+    border: 2px solid #40D6D1;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      background-color: #40D6D1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform-origin: center right;
+      transform: scaleX(0);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
 }
 
 button:hover {
   cursor: pointer;
-  color: #2688ff;
+
+  &.btn-white {
+    color: #2688ff;
+  }
+
+  &.btn-green {
+    color: #ffffff;
+  }
 }
 
 button:hover::before {
@@ -117,11 +141,43 @@ button:hover::before {
 }
 
 .side-content {
-  margin-left: 50vw;
+  @media only screen and (min-width: 768px) {
+    margin-left: 50vw;
+  }
 
   .side-card {
     height: 100vh;
     padding: 3rem 3rem 5rem 0;
+
+    .card-content {
+      text-align: center;
+      color: #40D6D1;
+
+      img {
+        height: 108px;
+        width: 108px;
+      }
+
+      h1,h2 {
+        font-family: 'Oswald', sans-serif;
+      }
+
+      .sub-ttl {
+        letter-spacing: 32px;
+        margin-right: -32px;
+      }
+
+      .main-ttl {
+        .front-end {
+          font-size: 3.5rem;
+        }
+
+        .engineer {
+          font-size: 4.15rem;
+        }
+      }
+
+    }
   }
 }
 
@@ -146,11 +202,13 @@ button:hover::before {
   border-radius: 50% 38% 43% 48% / 55% 48% 49% 42%;
   background-image: linear-gradient(-180deg, #2C66ED 0%, #30CDE3 100%);
   position: absolute;
-  top: -110px;
-  left: 20px;
+  top: -50px;
+  left: 10px;
   height: 150px;
   width: 150px;
   transform: rotate(80deg);
+  animation: move1 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
 }
 
 .blob2 {
@@ -162,6 +220,20 @@ button:hover::before {
   height: 250px;
   width: 250px;
   transform: rotate(80deg);
+  animation: move2 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+.blob3 {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background-image: linear-gradient(-180deg, #2C66ED 0%, #30CDE3 100%);
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  height: 100px;
+  width: 100px;
+  // transform: rotate(80deg);
+  animation: rotating 10s linear infinite;
 }
 
 .inner-card {
@@ -183,12 +255,74 @@ button:hover::before {
     align-items: center;
     cursor: pointer;
 
-    
+
     transition: transform 0.5s;
-    
+
     &:hover {
       box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
-          transform: translate(0px, -5px);
-        }
+      transform: translate(0px, -5px);
+    }
+  }
+}
+
+@keyframes move1 {
+  0% {
+    transform: scale(1) translate(10px, 0);
+  }
+
+  38% {
+    transform: scale(0.8, 1) translate(0vw, 10vh) rotate(160deg);
+  }
+
+  78% {
+    transform: scale(1.3) translate(0vw, 15vh) rotate(-20deg);
+  }
+
+  80% {
+    transform: scale(1.3) translate(0vw, 15vh) rotate(-20deg);
+  }
+
+  100% {
+    transform: scale(1) translate(10px, 0);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: scale(1) rotate(90deg);
+  }
+
+  25% {
+    transform: scale(0.8, 1) translate(10vw, 0) rotate(180deg);
+  }
+
+  50% {
+    transform: scale(0.8, 1) translate(20vw, 0) rotate(270deg);
+  }
+
+  75% {
+    transform: scale(1.3) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
