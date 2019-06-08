@@ -45,8 +45,11 @@
 
   .footer {
     width: 100%;
-    margin-top: 2.2rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(25vh - 3rem);
 
     .social {
       display: flex;

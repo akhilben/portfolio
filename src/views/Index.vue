@@ -28,13 +28,15 @@
           </div>
         </div>
         <div class="footer">
-          <div class="social">
-            <a><font-awesome-icon :icon="['fab', 'github']" size="2x"/></a>
-            <a><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
-            <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
-            <a><font-awesome-icon icon="envelope" size="2x"/></a>
+          <div class="w-100">
+            <div class="social">
+              <a><font-awesome-icon :icon="['fab', 'github']" size="2x"/></a>
+              <a><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
+              <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
+              <a><font-awesome-icon icon="envelope" size="2x"/></a>
+            </div>
+            <p>© Copyright 2019, Akhil Ben.</p>
           </div>
-          <p>© Copyright 2019, Akhil Ben.</p>
         </div>
     </section>
     <section class="side-content">
