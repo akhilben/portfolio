@@ -6,7 +6,7 @@
 
 .main-content {
   height: 100vh;
-  padding: 3rem 0 5rem 3rem;
+  padding: 3rem 0 0 3rem;
   overflow: hidden;
   @media only screen and (min-width: 768px) {
     position: fixed;
@@ -45,8 +45,11 @@
 
   .footer {
     width: 100%;
-    margin-top: 2.2rem;
     position: relative;
+    height: calc(25vh - 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .social {
       display: flex;
@@ -141,53 +144,57 @@ button:hover::before {
 }
 
 .side-content {
-  height: 100vh;
-  overflow: auto;
-  scroll-snap-type: mandatory;
-	scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-
   @media only screen and (min-width: 768px) {
     margin-left: 50vw;
   }
 
-  .side-card {
-    height: 100vh;
-    padding: 3rem 3rem 5rem 0;
-    position: relative;
-    scroll-snap-align: start;
+  .content-wrapper {
+    // scroll-snap-points-x: repeat(50vw);
+    // scroll-snap-type: x mandatory;
+    // -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 50vw;
+    overflow-x: auto;
 
-    .card-content {
-      text-align: center;
-      color: #40D6D1;
-
-      img {
-        height: 108px;
-        width: 108px;
-      }
-
-      h1,h2 {
-        font-family: 'Oswald', sans-serif;
-      }
-
-      .sub-ttl {
-        letter-spacing: 32px;
-        margin-right: -32px;
-      }
-
-      .main-ttl {
-        .front-end {
-          font-size: 3.5rem;
+    .side-card {
+      height: 100vh;
+      padding: 3rem 3rem 5rem 0;
+      position: relative;
+      // scroll-snap-align: start;
+  
+      .card-content {
+        text-align: center;
+        color: #40D6D1;
+  
+        img {
+          height: 108px;
+          width: 108px;
         }
-
-        .engineer {
-          font-size: 4.15rem;
+  
+        h1,h2 {
+          font-family: 'Oswald', sans-serif;
         }
+  
+        .sub-ttl {
+          letter-spacing: 32px;
+          margin-right: -32px;
+        }
+  
+        .main-ttl {
+          .front-end {
+            font-size: 3.5rem;
+          }
+  
+          .engineer {
+            font-size: 4.15rem;
+          }
+        }
+    
       }
-
     }
   }
+
 }
 
 .full-height {
@@ -271,6 +278,7 @@ button:hover::before {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: calc(50vw - 3rem);
 
   .menu {
 

@@ -28,33 +28,40 @@
           </div>
         </div>
         <div class="footer">
-          <div class="social">
-            <a><font-awesome-icon :icon="['fab', 'github']" size="2x"/></a>
-            <a><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
-            <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
-            <a><font-awesome-icon icon="envelope" size="2x"/></a>
+          <div class="w-100">
+            <div class="social">
+              <a><font-awesome-icon :icon="['fab', 'github']" size="2x"/></a>
+              <a><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
+              <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
+              <a><font-awesome-icon icon="envelope" size="2x"/></a>
+            </div>
+            <p>© Copyright 2019, Akhil Ben.</p>
           </div>
-          <p>© Copyright 2019, Akhil Ben.</p>
         </div>
     </section>
     <section class="side-content">
-      <div class="side-card gradient-white">
-        <div class="blob5"></div>
-        <div class="blob4"></div>
-        <div class="inner-card gradient-white">
-          <div class="card-content">
-            <img src="src/assets/images/avataaars.svg" alt="me">
-            <h2 class="mt-3 sub-ttl">I AM A</h2>
-            <div class="main-ttl">
-              <h1 class="front-end">FRONT-END</h1>
-              <h1 class="engineer">ENGINEER</h1>
+      <div class="content-wrapper" id="side-content-wrapper">
+        <div class="side-card gradient-white">
+          <div class="blob5"></div>
+          <div class="blob4"></div>
+          <div class="inner-card gradient-white">
+            <div class="card-content">
+              <img src="src/assets/images/avataaars.svg" alt="me">
+              <h2 class="mt-3 sub-ttl">I AM A</h2>
+              <div class="main-ttl">
+                <h1 class="front-end">FRONT-END</h1>
+                <h1 class="engineer">ENGINEER</h1>
+              </div>
+              <button class="btn-green mt-3" v-on:click="scrollToContainer(-1)">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
             </div>
-            <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
           </div>
         </div>
-      </div>
-      <div class="side-card">
-        <div class="inner-card"></div>
+        <div class="side-card" id="#">
+          <div class="inner-card"></div>
+        </div>
+        <div class="side-card">
+          <div class="inner-card"></div>
+        </div>
       </div>
     </section>
   </div>
@@ -62,6 +69,7 @@
 
 <script>
 import api from "@API";
+import _ from "lodash";
 
 import "./Index.scss";
 
@@ -70,14 +78,38 @@ export default {
   components: {},
   data() {
     return {
-      isMenuActive: false
+      isMenuActive: false,
+      scrollToPosition: 0,
+      scrollElement: ''
     };
   },
   methods: {
     onMenuClick() {
       console.log('here');
       this.isMenuActive = !this.isMenuActive;
-    }
+    },
+
+    handleScroll(e) {
+      const delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      this.scrollElement.scrollLeft -= delta*2;
+      this.scrollToContainer(delta);
+      e.preventDefault();
+    },
+
+    scrollToContainer: _.debounce(function(delta) {
+      this.scrollToPosition += -delta*(window.innerWidth / 2);
+      this.scrollElement.scrollTo({left: this.scrollToPosition, top: 0, behavior: 'smooth'}); // Multiplied by 40
+    }, 100)
+  },
+
+
+  created () {
+    window.addEventListener('mousewheel', this.handleScroll, false);
+    window.addEventListener('DOMMouseScroll', this.handleScroll, false);
+  },
+
+  mounted() {
+    this.scrollElement = document.getElementById('side-content-wrapper');
   }
 };
 </script>
