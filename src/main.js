@@ -18,6 +18,8 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+import VueObserveVisibility from 'vue-observe-visibility';
+
 library.add(
   faBars,
   faEnvelope,
@@ -46,6 +48,7 @@ Vue.config.productionTip = false;
 
 Vue.use(Vuex);
 Vue.use(VueCookie);
+Vue.use(VueObserveVisibility);
 
 const store = new Vuex.Store(VuexStoreConfig);
 

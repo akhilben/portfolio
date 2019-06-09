@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper">
-    <section class="main-content gradient-blue">
+    <section class="main-content" v-bind:class="mainBg">
         <div class="blob1"></div>
         <div class="blob2"></div>
         <div class="blob3"></div>
-        <div class="inner-card gradient-blue">
+        <div class="inner-card" v-bind:class="mainBg">
           <div class="menu" v-bind:class="{ active: isMenuActive }">
             <a class="icon" v-bind:class="{ front: isMenuActive,  back: !isMenuActive}" v-on:click="onMenuClick()">
               <font-awesome-icon :icon="isMenuActive ? 'times' : 'bars'" />
@@ -40,10 +40,10 @@
         </div>
     </section>
     <section class="side-content">
-      <div class="side-card gradient-white">
+      <div class="side-card page1">
         <div class="blob5"></div>
         <div class="blob4"></div>
-        <div class="inner-card gradient-white">
+        <div class="inner-card page1" v-observe-visibility="changeBg">
           <div class="card-content">
             <img src="src/assets/images/avataaars.svg" alt="me">
             <h2 class="mt-3 sub-ttl">I AM A</h2>
@@ -55,8 +55,32 @@
           </div>
         </div>
       </div>
+      <div class="side-card page2">
+        <div class="blob5"></div>
+        <div class="blob4"></div>
+        <div class="inner-card" v-observe-visibility="changeBgToRed">
+          <div class="card-wrapper">
+            <div class="short-description">
+              <dl><dt>experience</dt><dd>2+ years</dd></dl>
+              <dl><dt>what</dt><dd>Front-End Eng.</dd></dl>
+              <dl><dt>where</dt><dd>Cubet</dd></dl>
+            </div>
+          <!-- <div class="test">ABOUT ME</div> -->
+            <hr class="my-5">
+            <p>I am a front-end engineer from Kochi, India  with
+            2+ years of experience in web development. I
+            love to learn and use latest technologies to create
+            innovative and beautiful web apps. Have mainly
+            worked in Angular but not a stranger to other 
+            prominent front-end js frameworks too! Currently
+            working as a front-end engineer at Cubet Techno Labs.
+            </p>
+            <hr class="mt-5">
+          </div>
+        </div>
+      </div>
       <div class="side-card">
-        <div class="inner-card"></div>
+        <div class="inner-card" v-observe-visibility="changeBgToPurple"></div>
       </div>
     </section>
   </div>
@@ -72,14 +96,30 @@ export default {
   components: {},
   data() {
     return {
-      isMenuActive: false
+      isMenuActive: false,
+      mainBg: 'gradient-blue'
     };
   },
   methods: {
     onMenuClick() {
-      console.log('here');
       this.isMenuActive = !this.isMenuActive;
-    }
+    },
+
+    changeBg(visible) {
+      console.log(visible);
+      if (!visible) { return; }
+      this.mainBg = 'gradient-blue';
+    },
+
+    changeBgToRed(visible) {
+      if (!visible) { return; }
+      this.mainBg = 'gradient-red';
+    },
+
+    changeBgToPurple(visible) {
+      if (!visible) { return; }
+      this.mainBg = 'gradient-purple';
+    },
   }
 };
 </script>

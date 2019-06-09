@@ -15,15 +15,15 @@ const router = new Router({
       name: 'Home',
       component: Index,
       meta: {
-        title: 'Accueil',
+        title: 'Akhil Ben',
       },
     },
   ],
 });
 
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title + TitleSeparator + SiteName;
-  next();
-});
+// router.beforeEach((to, from, next) => {
+//   document.title = to.meta.title + TitleSeparator + SiteName;
+//   next();
+// });
 
 export default router;
