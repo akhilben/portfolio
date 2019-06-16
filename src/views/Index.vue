@@ -79,8 +79,55 @@
           </div>
         </div>
       </div>
-      <div class="side-card">
-        <div class="inner-card" v-observe-visibility="changeBgToPurple"></div>
+      <div class="side-card page3">
+        <div class="blob5"></div>
+        <div class="blob4"></div>
+        <div class="inner-card" v-observe-visibility="changeBgToPurple">
+          <div class="card-wrapper">
+            <h1 class="page-ttl"><span>s</span>kills</h1>
+            <div class="row text-white">
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://angular.io"><font-awesome-icon :icon="['fab', 'angular']"/>Angular</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/HTML5"><font-awesome-icon :icon="['fab', 'html5']"/>HTML</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"><font-awesome-icon :icon="['fab', 'css3']"/>CSS</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://sass-lang.com/"><font-awesome-icon :icon="['fab', 'sass']"/>Scss</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://www.sketch.com/"><font-awesome-icon :icon="['fab', 'sketch']"/>Sketch</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://www.figma.com/"><font-awesome-icon :icon="['fab', 'figma']"/>Figma</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://getbootstrap.com/"><font-awesome-icon :icon="['fab', 'bootstrap']"/>Bootstrap</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://ionicframework.com"><img src="src/assets/images/ionic.svg" height="16px">Ionic</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://vuejs.org"><font-awesome-icon :icon="['fab', 'vuejs']"/>Vue</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://reactjs.org/"><font-awesome-icon :icon="['fab', 'react']"/>React</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://nodejs.org/"><font-awesome-icon :icon="['fab', 'node-js']"/>NodeJs</a>
+              </div>
+              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
+                <a class="pills" rel="noopener" target="_blank" href="https://www.ibm.com/watson"><img src="src/assets/images/ibm-watson.svg" height="16px">Watson</a>
+              </div>
+            </div>
+            <div class="row full-list">
+
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

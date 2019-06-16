@@ -163,8 +163,8 @@ button:hover::before {
         scroll-snap-align: start;
 
         &.page2 {
-          background-color: #da2049;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='18' height='18' fill-opacity='0.74' fill='%23cc0633'/%3E%3C/svg%3E");
+            background-color: #da1f49;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='9' height='9' fill='%23ff2959'/%3E%3C/svg%3E");
 
             .blob4,
             .blob5 {
@@ -224,8 +224,8 @@ button:hover::before {
         }
 
         &.page1 {
-          background-color: #ffffff;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='15' height='15' fill-opacity='0.74' fill='%23f0f0f0'/%3E%3C/svg%3E");
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='9' height='9' fill='%23ebecfc'/%3E%3C/svg%3E");
 
             .blob4 {
                 background-image: linear-gradient(270deg, #2C66ED 0%, #30CDE3 100%);
@@ -263,6 +263,64 @@ button:hover::before {
 
                     .engineer {
                         font-size: 4.15rem;
+                    }
+                }
+            }
+        }
+
+        &.page3 {
+            background-color: #270a47;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='9' height='9' fill='%23341c4a'/%3E%3C/svg%3E");
+
+            .blob4,
+            .blob5 {
+              background-image: linear-gradient(-180deg, #2665ad 0%, #20112d 100%);
+            }
+
+            .inner-card {
+                background: #270a47;
+                border-left: 0;
+
+                @media only screen and (max-width: 1048px) {
+                    font-size: small;
+                }
+
+                .card-wrapper {
+                    padding: 0 1.5rem;
+
+                    @media only screen and (min-width: 768px) {
+                        padding: 0 3rem;
+                    }
+                }
+
+                .page-ttl {
+                    color: #ffffff;
+                    text-align: center;
+                    margin-bottom: 1.2rem;
+
+                    span {
+                        background: #ff0065;
+                    }
+                }
+
+                .pills {
+                    border: 1px solid #ffffff;
+                    border-radius: 24px;
+                    padding: 0.3rem 1rem;
+                    text-align: center;
+                    display: inline-block;
+                    width: 140px;
+                    cursor: pointer;
+                    transition: transform 0.5s;
+                    color: #ffffff !important;
+                    text-decoration: none;
+
+                    &:hover {
+                        transform: translate(0px, -3px);
+                    }
+
+                    svg, img {
+                        margin-right: 5px;
                     }
                 }
             }
@@ -329,11 +387,11 @@ button:hover::before {
 
     .blob2,
     .blob3 {
-        background-image: linear-gradient(-180deg, rgb(20, 122, 238) 0%, #30CDE3 100%);
+        background-image: linear-gradient(-180deg, #2f0952 0%, #2290de 100%);
     }
 
     .blob1 {
-        background-image: linear-gradient(-180deg, rgb(20, 169, 238) 0%, #30CDE3 100%);
+        background-image: linear-gradient(-180deg, #2f0952 0%, #16456d 100%);
     }
 }
 

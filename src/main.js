@@ -9,6 +9,7 @@ import VuexStoreConfig from './vuex/store';
 import { enableAnalytics, analyticsKey, disableAnalyticsInDebug } from './config';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +17,16 @@ import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faCss3 } from '@fortawesome/free-brands-svg-icons';
+import { faSass } from '@fortawesome/free-brands-svg-icons';
+import { faSketch } from '@fortawesome/free-brands-svg-icons';
+import { faFigma } from '@fortawesome/free-brands-svg-icons';
+import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import { faVuejs } from '@fortawesome/free-brands-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
 
 import VueObserveVisibility from 'vue-observe-visibility';
 
@@ -27,7 +37,17 @@ library.add(
   faAngleDoubleDown,
   faGithub,
   faLinkedin,
-  faFacebook
+  faFacebook,
+  faAngular,
+  faHtml5,
+  faCss3,
+  faSass,
+  faSketch,
+  faFigma,
+  faBootstrap,
+  faVuejs,
+  faReact,
+  faNodeJs
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
