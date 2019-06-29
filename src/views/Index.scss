@@ -175,12 +175,20 @@ button:hover::before {
                 background: #da2049;
                 border-left: 0;
 
+                .page-ttl {
+                    color: #c11f43;
+                    position: absolute;
+                    font-size: 14vw;
+                    z-index: 0;
+                }
+
                 @media only screen and (max-width: 1048px) {
                     font-size: small;
                 }
 
                 .card-wrapper {
                     padding: 0 1.5rem;
+                    z-index: 1;
 
                     @media only screen and (min-width: 768px) {
                         padding: 0 3rem;
@@ -294,13 +302,9 @@ button:hover::before {
                 }
 
                 .page-ttl {
-                    color: #ffffff;
-                    text-align: center;
-                    margin-bottom: 1.2rem;
-
-                    span {
-                        background: #ff0065;
-                    }
+                    color: #331550;
+                    position: absolute;
+                    font-size: 16vw;
                 }
 
                 .pills {

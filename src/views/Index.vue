@@ -59,6 +59,7 @@
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToRed">
+          <h1 class="page-ttl">About</h1>
           <div class="card-wrapper">
             <div class="short-description">
               <dl><dt>experience</dt><dd>2+ years</dd></dl>
@@ -72,7 +73,7 @@
             love to learn and use latest technologies to create
             innovative and beautiful web apps. Have mainly
             worked in Angular but not a stranger to other 
-            prominent front-end js frameworks too! Currently
+            prominent front-end js frameworks too! Holds a B-tech degree from MGU. Currently
             working as a front-end engineer at Cubet Techno Labs.
             </p>
             <hr class="mt-5">
@@ -83,8 +84,8 @@
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToPurple">
+            <h1 class="page-ttl">Skills</h1>
           <div class="card-wrapper">
-            <h1 class="page-ttl"><span>s</span>kills</h1>
             <div class="row text-white">
               <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
                 <a class="pills" rel="noopener" target="_blank" href="https://angular.io"><font-awesome-icon :icon="['fab', 'angular']"/>Angular</a>
