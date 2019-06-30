@@ -1,43 +1,63 @@
 <template>
   <div class="wrapper">
     <section class="main-content" v-bind:class="mainBg">
-        <div class="blob1"></div>
-        <div class="blob2"></div>
-        <div class="blob3"></div>
-        <div class="inner-card" v-bind:class="mainBg">
-          <div class="menu" v-bind:class="{ active: isMenuActive }">
-            <a class="icon" v-bind:class="{ front: isMenuActive,  back: !isMenuActive}" v-on:click="onMenuClick()">
-              <font-awesome-icon :icon="isMenuActive ? 'times' : 'bars'" />
+      <div class="blob1"></div>
+      <div class="blob2"></div>
+      <div class="blob3"></div>
+      <div class="inner-card" v-bind:class="mainBg">
+        <div class="menu" v-bind:class="{ active: isMenuActive }">
+          <a
+            class="icon"
+            v-bind:class="{ front: isMenuActive,  back: !isMenuActive}"
+            v-on:click="onMenuClick()"
+          >
+            <font-awesome-icon :icon="isMenuActive ? 'times' : 'bars'"/>
+          </a>
+          <nav>
+            <ul>
+              <li>
+                <a class="active">Home</a>
+              </li>
+              <li>
+                <a>About</a>
+              </li>
+              <li>
+                <a>Skills</a>
+              </li>
+              <li>
+                <a>Projects</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="card-content">
+          <h2 class="sub-ttl">HELLO, I AM</h2>
+          <div class="main-ttl">
+            <h1 class="first-name">AKHIL</h1>
+            <h1 class="last-name">BEN</h1>
+          </div>
+          <button class="btn-white">Download my CV</button>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="w-100">
+          <div class="social">
+            <a>
+              <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
             </a>
-            <nav>
-              <ul>
-                <li><a class="active">Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Skills</a></li>
-                <li><a>Projects</a></li>
-              </ul>
-            </nav>
+            <a>
+              <font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/>
+            </a>
+            <a>
+              <font-awesome-icon :icon="['fab', 'facebook']" size="2x"/>
+            </a>
+            <a>
+              <font-awesome-icon icon="envelope" size="2x"/>
+            </a>
           </div>
-          <div class="card-content">
-            <h2 class="sub-ttl">HELLO, I AM</h2>
-            <div class="main-ttl">
-              <h1 class="first-name">AKHIL</h1>
-              <h1 class="last-name">BEN</h1>
-            </div>
-            <button class="btn-white">Download my CV</button>
-          </div>
+          <p>© Copyright 2019, Akhil Ben.</p>
         </div>
-        <div class="footer">
-          <div class="w-100">
-            <div class="social">
-              <a><font-awesome-icon :icon="['fab', 'github']" size="2x"/></a>
-              <a><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
-              <a><font-awesome-icon :icon="['fab', 'facebook']" size="2x"/></a>
-              <a><font-awesome-icon icon="envelope" size="2x"/></a>
-            </div>
-            <p>© Copyright 2019, Akhil Ben.</p>
-          </div>
-        </div>
+      </div>
     </section>
     <section class="side-content">
       <div class="side-card page1">
@@ -51,7 +71,12 @@
               <h1 class="front-end">FRONT-END</h1>
               <h1 class="engineer">ENGINEER</h1>
             </div>
-            <button class="btn-green mt-3">Find out more <span class="ml-2"><font-awesome-icon icon="angle-double-down"/></span></button>
+            <button class="btn-green mt-3">
+              Find out more
+              <span class="ml-2">
+                <font-awesome-icon icon="angle-double-down"/>
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -62,19 +87,29 @@
           <h1 class="page-ttl">About</h1>
           <div class="card-wrapper">
             <div class="short-description">
-              <dl><dt>experience</dt><dd>2+ years</dd></dl>
-              <dl><dt>what</dt><dd>Front-End Eng.</dd></dl>
-              <dl><dt>where</dt><dd>Cubet</dd></dl>
+              <dl>
+                <dt>experience</dt>
+                <dd>2+ years</dd>
+              </dl>
+              <dl>
+                <dt>what</dt>
+                <dd>Front-End Eng.</dd>
+              </dl>
+              <dl>
+                <dt>where</dt>
+                <dd>Cubet</dd>
+              </dl>
             </div>
-          <!-- <div class="test">ABOUT ME</div> -->
+            <!-- <div class="test">ABOUT ME</div> -->
             <hr class="my-5">
-            <p>I am a front-end engineer from Kochi, India  with
-            2+ years of experience in web development. I
-            love to learn and use latest technologies to create
-            innovative and beautiful web apps. Have mainly
-            worked in Angular but not a stranger to other 
-            prominent front-end js frameworks too! Holds a B-tech degree from MGU. Currently
-            working as a front-end engineer at Cubet Techno Labs.
+            <p>
+              I am a front-end engineer from Kochi, India with
+              2+ years of experience in web development. I
+              love to learn and use latest technologies to create
+              innovative and beautiful web apps. Have mainly
+              worked in Angular but not a stranger to other
+              prominent front-end js frameworks too! Holds a B-tech degree from MGU. Currently
+              working as a front-end engineer at Cubet Techno Labs.
             </p>
             <hr class="mt-5">
           </div>
@@ -84,50 +119,156 @@
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToPurple">
-            <h1 class="page-ttl">Skills</h1>
-          <div class="card-wrapper">
-            <div class="row text-white">
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://angular.io"><font-awesome-icon :icon="['fab', 'angular']"/>Angular</a>
+          <div class="options">
+            <div
+              class="option"
+              v-bind:class="{ active: openedSkill==='frameworks' }"
+              v-on:click="onSkillClick('frameworks')"
+            >
+              <span class="ttl">Frameworks & Libraries</span>
+              <div class="row text-white">
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://angular.io">
+                    <font-awesome-icon :icon="['fab', 'angular']"/>Angular
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://ionicframework.com">
+                    <img src="src/assets/images/ionic.svg" height="16px">Ionic
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://vuejs.org">
+                    <font-awesome-icon :icon="['fab', 'vuejs']"/>Vue
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://reactjs.org/">
+                    <font-awesome-icon :icon="['fab', 'react']"/>React
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://nodejs.org/">
+                    <font-awesome-icon :icon="['fab', 'node-js']"/>NodeJs
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://nodejs.org/">
+                    <img src="src/assets/images/rxjs.svg" height="16px">RxJs
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://jquery.com">
+                    <img src="src/assets/images/jquery.svg" height="16px">jQuery
+                  </a>
+                </div>
               </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/HTML5"><font-awesome-icon :icon="['fab', 'html5']"/>HTML</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"><font-awesome-icon :icon="['fab', 'css3']"/>CSS</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://sass-lang.com/"><font-awesome-icon :icon="['fab', 'sass']"/>Scss</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://www.sketch.com/"><font-awesome-icon :icon="['fab', 'sketch']"/>Sketch</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://www.figma.com/"><font-awesome-icon :icon="['fab', 'figma']"/>Figma</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://getbootstrap.com/"><font-awesome-icon :icon="['fab', 'bootstrap']"/>Bootstrap</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://ionicframework.com"><img src="src/assets/images/ionic.svg" height="16px">Ionic</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://vuejs.org"><font-awesome-icon :icon="['fab', 'vuejs']"/>Vue</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://reactjs.org/"><font-awesome-icon :icon="['fab', 'react']"/>React</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://nodejs.org/"><font-awesome-icon :icon="['fab', 'node-js']"/>NodeJs</a>
-              </div>
-              <div class="col-6 col-sm-3 col-md-6 col-lg-4 col-xxl-3 my-4 text-center">
-                <a class="pills" rel="noopener" target="_blank" href="https://www.ibm.com/watson"><img src="src/assets/images/ibm-watson.svg" height="16px">Watson</a>
-              </div>
-            </div>
-            <div class="row full-list">
 
+              <a v-on:click.stop="onSkillClick('design')" class="navigate right">
+                <font-awesome-icon icon="arrow-circle-right"/>
+              </a>
+            </div>
+            <div
+              class="option"
+              v-bind:class="{ active: openedSkill==='design' }"
+              v-on:click="onSkillClick('design')"
+            >
+              <span class="ttl">Design & Development</span>
+              <div class="row text-white">
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.sketch.com/">
+                    <font-awesome-icon :icon="['fab', 'sketch']"/>Sketch
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.figma.com/">
+                    <font-awesome-icon :icon="['fab', 'figma']"/>Figma
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a
+                    class="pills"
+                    rel="noopener"
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/HTML5"
+                  >
+                    <font-awesome-icon :icon="['fab', 'html5']"/>HTML
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a
+                    class="pills"
+                    rel="noopener"
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+                  >
+                    <font-awesome-icon :icon="['fab', 'css3']"/>CSS
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://sass-lang.com/">
+                    <font-awesome-icon :icon="['fab', 'sass']"/>Scss
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://getbootstrap.com/">
+                    <font-awesome-icon :icon="['fab', 'bootstrap']"/>Bootstrap
+                  </a>
+                </div>
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.qt.io">
+                    <img src="src/assets/images/qt.svg" height="16px" style="filter: invert(1);">Designer
+                  </a>
+                </div>
+              </div>
+              <a v-on:click.stop="onSkillClick('frameworks')" class="navigate left">
+                <font-awesome-icon icon="arrow-circle-left"/>
+              </a>
+              <a v-on:click.stop="onSkillClick('misc')" class="navigate right">
+                <font-awesome-icon icon="arrow-circle-right"/>
+              </a>
+            </div>
+            <div
+              class="option"
+              v-bind:class="{ active: openedSkill==='misc' }"
+              v-on:click="onSkillClick('misc')"
+            >
+              <span class="ttl">Miscellaneous</span>
+              <div class="row text-white">
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.ibm.com/watson">
+                    <img src="src/assets/images/ibm-watson.svg" height="16px">Watson
+                  </a>
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.qt.io">
+                    <img
+                      src="src/assets/images/dialogflow.png"
+                      height="16px"
+                      style="filter: brightness(5);"
+                    >Dialogflow
+                  </a>
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://getbootstrap.com/">
+                    <font-awesome-icon :icon="['fab', 'git-alt']"/>Git
+                  </a>
+                </div>
+
+                <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
+                  <a class="pills" rel="noopener" target="_blank" href="https://www.qt.io">
+                    <img src="src/assets/images/typescript.svg" height="16px" style="filter: invert(1);">Typescript
+                  </a>
+                </div>
+              </div>
+              <a v-on:click.stop="onSkillClick('design')" class="navigate left">
+                <font-awesome-icon icon="arrow-circle-left"/>
+              </a>
             </div>
           </div>
+          <!-- </div> -->
         </div>
       </div>
     </section>
@@ -145,7 +286,8 @@ export default {
   data() {
     return {
       isMenuActive: false,
-      mainBg: 'gradient-blue'
+      mainBg: "gradient-blue",
+      openedSkill: "frameworks"
     };
   },
   methods: {
@@ -155,19 +297,30 @@ export default {
 
     changeBg(visible) {
       console.log(visible);
-      if (!visible) { return; }
-      this.mainBg = 'gradient-blue';
+      if (!visible) {
+        return;
+      }
+      this.mainBg = "gradient-blue";
     },
 
     changeBgToRed(visible) {
-      if (!visible) { return; }
-      this.mainBg = 'gradient-red';
+      if (!visible) {
+        return;
+      }
+      this.mainBg = "gradient-red";
     },
 
     changeBgToPurple(visible) {
-      if (!visible) { return; }
-      this.mainBg = 'gradient-purple';
+      if (!visible) {
+        return;
+      }
+      this.mainBg = "gradient-purple";
     },
+
+    onSkillClick(skill) {
+      console.log('ya');
+      this.openedSkill = skill;
+    }
   }
 };
 </script>

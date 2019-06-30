@@ -14,6 +14,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -27,6 +29,7 @@ import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
 
 import VueObserveVisibility from 'vue-observe-visibility';
 
@@ -35,6 +38,8 @@ library.add(
   faEnvelope,
   faTimes,
   faAngleDoubleDown,
+  faArrowCircleRight,
+  faArrowCircleLeft,
   faGithub,
   faLinkedin,
   faFacebook,
@@ -47,7 +52,8 @@ library.add(
   faBootstrap,
   faVuejs,
   faReact,
-  faNodeJs
+  faNodeJs,
+  faGitAlt
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
