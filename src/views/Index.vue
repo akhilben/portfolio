@@ -115,6 +115,7 @@
           </div>
         </div>
       </div>
+
       <div class="side-card page3">
         <div class="blob5"></div>
         <div class="blob4"></div>
@@ -259,7 +260,11 @@
 
                 <div class="col-6 col-md-12 col-lg-6 my-4 text-center">
                   <a class="pills" rel="noopener" target="_blank" href="https://www.qt.io">
-                    <img src="src/assets/images/typescript.svg" height="16px" style="filter: invert(1);">Typescript
+                    <img
+                      src="src/assets/images/typescript.svg"
+                      height="16px"
+                      style="filter: invert(1);"
+                    >Typescript
                   </a>
                 </div>
               </div>
@@ -269,6 +274,62 @@
             </div>
           </div>
           <!-- </div> -->
+        </div>
+      </div>
+
+      <div class="side-card page4">
+        <div class="blob5"></div>
+        <div class="blob4"></div>
+        <div class="inner-card" v-observe-visibility="changeBgToCrimson">
+          <h1 class="page-ttl">Projects</h1>
+          <div class="card-wrapper">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="project-card">
+                  <div class="card-head">
+                    <picture>
+                      <img src="src/assets/images/quorra.png" alt>
+                    </picture>
+                    <h6 class="m-0">Quorra Js</h6>
+                  </div>
+
+                  <div class="card-content">
+                    <p>A is a full fledged, open-source MVC NodeJS framework inspired by Laravel.</p>
+                    <div class="card-links">
+                      <a rel="noopener" target="_blank" href="https://github.com/quorrajs">
+                        <font-awesome-icon :icon="['fab', 'github']"/>
+                      </a>
+                      <a rel="noopener" target="_blank" href="https://quorrajs.org">
+                        <font-awesome-icon icon="link"/>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="project-card">
+                  <div class="card-head">
+                    <picture>
+                      <img src="src/assets/images/taskpod.png" alt>
+                    </picture>
+                    <h6 class="m-0">Taskpod</h6>
+                  </div>
+
+                  <div class="card-content">
+                    <p>A desktop app for Podio with a quick launcher to manage tasks.</p>
+                    <div class="card-links">
+                      <a rel="noopener" target="_blank" href="https://taskpod.app">
+                        <font-awesome-icon icon="link"/>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="text-white text-center"><font-awesome-icon icon="plus-circle" size="2x"/> <span class="ml-1" style="vertical-align:super;">many more</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -317,8 +378,15 @@ export default {
       this.mainBg = "gradient-purple";
     },
 
+    changeBgToCrimson(visible) {
+      if (!visible) {
+        return;
+      }
+      this.mainBg = "gradient-crimson";
+    },
+
     onSkillClick(skill) {
-      console.log('ya');
+      console.log("ya");
       this.openedSkill = skill;
     }
   }

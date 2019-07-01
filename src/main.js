@@ -16,6 +16,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -40,6 +42,8 @@ library.add(
   faAngleDoubleDown,
   faArrowCircleRight,
   faArrowCircleLeft,
+  faLink,
+  faPlusCircle,
   faGithub,
   faLinkedin,
   faFacebook,
