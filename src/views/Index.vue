@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <section class="main-content" v-bind:class="mainBg">
+      <p class="copyright">© Copyright 2019, Akhil Ben.</p>
       <div class="blob1"></div>
       <div class="blob2"></div>
       <div class="blob3"></div>
@@ -30,14 +31,14 @@
             </ul>
           </nav>
         </div>
-        <!-- <div class="card-content">
+        <div class="card-content">
           <h2 class="sub-ttl">HELLO, I AM</h2>
           <div class="main-ttl">
             <h1 class="first-name">AKHIL</h1>
             <h1 class="last-name">BEN</h1>
           </div>
           <button class="btn-white">Download my CV</button>
-        </div> -->
+        </div>
       </div>
       <div class="footer">
         <div class="w-100">
@@ -55,7 +56,6 @@
               <font-awesome-icon icon="envelope" size="2x"/>
             </a>
           </div>
-          <p>© Copyright 2019, Akhil Ben.</p>
         </div>
       </div>
     </section>
@@ -284,7 +284,7 @@
           <h1 class="page-ttl">Projects</h1>
           <div class="card-wrapper">
             <div class="row mb-4">
-              <div class="col-md-6">
+              <div class="col-md-6 mb-3">
 
                 <div class="project-card">
                   <div class="card-head">
@@ -308,7 +308,7 @@
 
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 mb-3">
                 <div class="project-card">
                   <div class="card-head">
                     <picture>

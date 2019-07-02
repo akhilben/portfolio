@@ -14,6 +14,15 @@
         width: 50vw;
     }
 
+    .copyright {
+        writing-mode: vertical-lr;
+        position: absolute;
+        left: 0;
+        top: 33%;
+        font-size: small;
+        color: #fffc;
+    }
+
 
     .card-content {
         text-align: center;
@@ -54,26 +63,18 @@
 
         .social {
             display: flex;
-            justify-content: space-evenly;
-            padding: 0 4rem;
+            justify-content: center;
 
             a {
                 cursor: pointer;
                 color: #ffffff !important;
                 transition: transform 0.25s;
+                margin-right: 2.5rem;
 
                 &:hover {
                     transform: translate(0px, -3px);
                 }
             }
-        }
-
-        p {
-            margin: 1rem;
-            text-align: center;
-            color: #ffffffce;
-            font-weight: 400;
-            font-size: 0.75rem;
         }
     }
 }
