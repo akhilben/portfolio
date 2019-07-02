@@ -16,33 +16,33 @@
           <nav>
             <ul>
               <li>
-                <a class="active">Home</a>
+                <a v-bind:class="{active: currentPage==='home'}" v-on:click="scrollToPage('home')">Home</a>
               </li>
               <li>
-                <a>About</a>
+                <a v-bind:class="{active: currentPage==='about'}" v-on:click="scrollToPage('about')">About</a>
               </li>
               <li>
-                <a>Skills</a>
+                <a v-bind:class="{active: currentPage==='skills'}" v-on:click="scrollToPage('skills')">Skills</a>
               </li>
               <li>
-                <a>Projects</a>
+                <a v-bind:class="{active: currentPage==='projects'}" v-on:click="scrollToPage('projects')">Projects</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="card-content">
+        <!-- <div class="card-content">
           <h2 class="sub-ttl">HELLO, I AM</h2>
           <div class="main-ttl">
             <h1 class="first-name">AKHIL</h1>
             <h1 class="last-name">BEN</h1>
           </div>
           <button class="btn-white">Download my CV</button>
-        </div>
+        </div> -->
       </div>
       <div class="footer">
         <div class="w-100">
           <div class="social">
-            <a>
+            <a rel="noopener" target="_blank" href="https://github.com/akhilben">
               <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
             </a>
             <a>
@@ -60,7 +60,7 @@
       </div>
     </section>
     <section class="side-content">
-      <div class="side-card page1">
+      <div class="side-card page1" id="home">
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card page1" v-observe-visibility="changeBg">
@@ -71,7 +71,7 @@
               <h1 class="front-end">FRONT-END</h1>
               <h1 class="engineer">ENGINEER</h1>
             </div>
-            <button class="btn-green mt-3">
+            <button class="btn-green solid mt-3" v-on:click="scrollToPage('about')">
               Find out more
               <span class="ml-2">
                 <font-awesome-icon icon="angle-double-down"/>
@@ -80,7 +80,7 @@
           </div>
         </div>
       </div>
-      <div class="side-card page2">
+      <div class="side-card page2" id="about">
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToRed">
@@ -107,16 +107,16 @@
               2+ years of experience in web development. I
               love to learn and use latest technologies to create
               innovative and beautiful web apps. Have mainly
-              worked in Angular but not a stranger to other
-              prominent front-end js frameworks too! Holds a B-tech degree from MGU. Currently
-              working as a front-end engineer at Cubet Techno Labs.
+              worked in <a rel="noopener" target="_blank" href="https://angular.io">Angular</a> but not a stranger to other
+              prominent front-end js frameworks too! Holds a B-tech degree in Computer Science from MG University. Currently
+              working as a front-end engineer at <a rel="noopener" target="_blank" href="https://cubettech.com">Cubet Techno Labs</a>.
             </p>
             <hr class="mt-5">
           </div>
         </div>
       </div>
 
-      <div class="side-card page3">
+      <div class="side-card page3" id="skills">
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToPurple">
@@ -277,7 +277,7 @@
         </div>
       </div>
 
-      <div class="side-card page4">
+      <div class="side-card page4" id="projects">
         <div class="blob5"></div>
         <div class="blob4"></div>
         <div class="inner-card" v-observe-visibility="changeBgToCrimson">
@@ -285,6 +285,7 @@
           <div class="card-wrapper">
             <div class="row mb-4">
               <div class="col-md-6">
+
                 <div class="project-card">
                   <div class="card-head">
                     <picture>
@@ -348,7 +349,8 @@ export default {
     return {
       isMenuActive: false,
       mainBg: "gradient-blue",
-      openedSkill: "frameworks"
+      openedSkill: "frameworks",
+      currentPage: 'home'
     };
   },
   methods: {
@@ -356,11 +358,16 @@ export default {
       this.isMenuActive = !this.isMenuActive;
     },
 
+    scrollToPage(page) {
+      this.currentPage = page;
+      document.getElementById(page).scrollIntoView({behavior: "smooth"});
+    },
+
     changeBg(visible) {
-      console.log(visible);
       if (!visible) {
         return;
       }
+      this.currentPage = 'home';
       this.mainBg = "gradient-blue";
     },
 
@@ -368,6 +375,7 @@ export default {
       if (!visible) {
         return;
       }
+      this.currentPage = 'about';
       this.mainBg = "gradient-red";
     },
 
@@ -375,6 +383,7 @@ export default {
       if (!visible) {
         return;
       }
+      this.currentPage = 'skills';
       this.mainBg = "gradient-purple";
     },
 
@@ -382,11 +391,11 @@ export default {
       if (!visible) {
         return;
       }
+      this.currentPage = 'projects';
       this.mainBg = "gradient-crimson";
     },
 
     onSkillClick(skill) {
-      console.log("ya");
       this.openedSkill = skill;
     }
   }
