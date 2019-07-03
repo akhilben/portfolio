@@ -17,4 +17,5 @@ export default {
 
 <style>
   @import '../../assets/css/bootstrap.min.css';
+  @import '../../assets/css/animate.css';
 </style>
