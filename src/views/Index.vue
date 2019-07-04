@@ -55,7 +55,12 @@
       <div class="footer">
         <div class="w-100">
           <div class="social">
-            <a class="animated ease fadeInLeft delay-2s" rel="noopener" target="_blank" href="https://github.com/akhilben">
+            <a
+              class="animated ease fadeInLeft delay-2s"
+              rel="noopener"
+              target="_blank"
+              href="https://github.com/akhilben"
+            >
               <font-awesome-icon :icon="['fab', 'github']" size="2x" />
             </a>
             <a class="animated ease fadeInLeft delay-1-5s">
@@ -71,23 +76,30 @@
         </div>
       </div>
     </section>
-    <section class="side-content">
+    <section class="side-content" id="sideContent">
       <div class="side-card page1" id="home">
         <div class="blob6"></div>
         <div class="blob7"></div>
         <div class="blob5"></div>
         <div class="blob4"></div>
-        <div v-observe-visibility="changeBg">
+        <div class="card-parent" v-observe-visibility="changeBg">
           <transition name="slide-fade">
-            <div class="inner-card page1" v-if="currentPage==='home'">
+            <div class="inner-card page1" v-show="currentPage==='home'">
               <div class="card-content">
-                <img class="animated ease fadeIn delay-0-3s" src="src/assets/images/avataaars.svg" alt="me" />
+                <img
+                  class="animated ease fadeIn delay-0-3s"
+                  src="src/assets/images/avataaars.svg"
+                  alt="me"
+                />
                 <h2 class="mt-3 sub-ttl animated ease fadeInDown">I AM A</h2>
                 <div class="main-ttl">
                   <h1 class="front-end animated ease fadeInDown delay-0-5s">FRONT-END</h1>
                   <h1 class="engineer animated ease fadeInDown delay-1s">ENGINEER</h1>
                 </div>
-                <button class="btn-green solid mt-3 animated ease fadeIn delay-1-5s" v-on:click="scrollToPage('about')">
+                <button
+                  class="btn-green solid mt-3 animated ease fadeIn delay-1-5s"
+                  v-on:click="scrollToPage('about')"
+                >
                   Find out more
                   <span class="ml-2">
                     <font-awesome-icon icon="angle-double-down" />
@@ -103,9 +115,9 @@
         <div class="blob7"></div>
         <div class="blob5"></div>
         <div class="blob4"></div>
-        <div v-observe-visibility="changeBgToRed">
+        <div class="card-parent" v-observe-visibility="changeBgToRed">
           <transition name="slide-fade">
-            <div class="inner-card" v-if="currentPage==='about'">
+            <div class="inner-card" v-show="currentPage==='about'">
               <h1 class="page-ttl">About</h1>
               <div class="card-wrapper">
                 <div class="short-description">
@@ -123,8 +135,8 @@
                   </dl>
                 </div>
                 <!-- <div class="test">ABOUT ME</div> -->
-                <hr class="my-5" />
-                <p class="animated ease fadeIn delay-0-3s">
+                <hr class="my-4" />
+                <p class="animated ease fadeIn delay-1s">
                   I am a front-end engineer from Kochi, India with
                   2+ years of experience in web development. I
                   love to learn and use latest technologies to create
@@ -143,7 +155,7 @@
                     href="https://cubettech.com"
                   >Cubet Techno Labs</a>.
                 </p>
-                <hr class="mt-5" />
+                <hr class="mt-4" />
               </div>
             </div>
           </transition>
@@ -155,9 +167,9 @@
         <div class="blob7"></div>
         <div class="blob5"></div>
         <div class="blob4"></div>
-        <div v-observe-visibility="changeBgToPurple">
+        <div class="card-parent" v-observe-visibility="changeBgToPurple">
           <transition name="slide-fade">
-            <div class="inner-card" v-if="currentPage==='skills'">
+            <div class="inner-card" v-show="currentPage==='skills'">
               <div class="options">
                 <div
                   class="option"
@@ -351,60 +363,60 @@
         <div class="blob7"></div>
         <div class="blob5"></div>
         <div class="blob4"></div>
-        <div v-observe-visibility="changeBgToCrimson">
+        <div class="card-parent" v-observe-visibility="changeBgToCrimson">
           <transition name="slide-fade">
-        <div class="inner-card" v-if="currentPage==='projects'">
-          <h1 class="page-ttl">Projects</h1>
-          <div class="card-wrapper">
-            <div class="row mb-4">
-              <div class="col-md-6 mb-3 animated ease fadeInDown delay-0-5s">
-                <div class="project-card">
-                  <div class="card-head">
-                    <picture>
-                      <img src="src/assets/images/quorra.png" alt />
-                    </picture>
-                    <h6 class="m-0">Quorra Js</h6>
-                  </div>
+            <div class="inner-card" v-show="currentPage==='projects'">
+              <h1 class="page-ttl">Projects</h1>
+              <div class="card-wrapper">
+                <div class="row mb-4">
+                  <div class="col-md-6 mb-3 animated ease fadeInDown delay-1s">
+                    <div class="project-card">
+                      <div class="card-head">
+                        <picture>
+                          <img src="src/assets/images/quorra.png" alt />
+                        </picture>
+                        <h6 class="m-0">Quorra Js</h6>
+                      </div>
 
-                  <div class="card-content">
-                    <p>A is a full fledged, open-source MVC NodeJS framework inspired by Laravel.</p>
-                    <div class="card-links">
-                      <a rel="noopener" target="_blank" href="https://github.com/quorrajs">
-                        <font-awesome-icon :icon="['fab', 'github']" />
-                      </a>
-                      <a rel="noopener" target="_blank" href="https://quorrajs.org">
-                        <font-awesome-icon icon="link" />
-                      </a>
+                      <div class="card-content">
+                        <p>A is a full fledged, open-source MVC NodeJS framework inspired by Laravel.</p>
+                        <div class="card-links">
+                          <a rel="noopener" target="_blank" href="https://github.com/quorrajs">
+                            <font-awesome-icon :icon="['fab', 'github']" />
+                          </a>
+                          <a rel="noopener" target="_blank" href="https://quorrajs.org">
+                            <font-awesome-icon icon="link" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3 animated ease fadeInDown delay-1-5s">
+                    <div class="project-card">
+                      <div class="card-head">
+                        <picture>
+                          <img src="src/assets/images/taskpod.png" alt />
+                        </picture>
+                        <h6 class="m-0">Taskpod</h6>
+                      </div>
+
+                      <div class="card-content">
+                        <p>A desktop app for Podio with a quick launcher to manage tasks.</p>
+                        <div class="card-links">
+                          <a rel="noopener" target="_blank" href="https://taskpod.app">
+                            <font-awesome-icon icon="link" />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6 mb-3 animated ease fadeInDown delay-1s">
-                <div class="project-card">
-                  <div class="card-head">
-                    <picture>
-                      <img src="src/assets/images/taskpod.png" alt />
-                    </picture>
-                    <h6 class="m-0">Taskpod</h6>
-                  </div>
-
-                  <div class="card-content">
-                    <p>A desktop app for Podio with a quick launcher to manage tasks.</p>
-                    <div class="card-links">
-                      <a rel="noopener" target="_blank" href="https://taskpod.app">
-                        <font-awesome-icon icon="link" />
-                      </a>
-                    </div>
-                  </div>
+                <div class="text-white text-center animated ease fadeIn delay-2s">
+                  <font-awesome-icon icon="plus-circle" size="2x" />
+                  <span class="ml-1" style="vertical-align:super;">many more</span>
                 </div>
               </div>
             </div>
-            <div class="text-white text-center animated ease fadeIn delay-1-5s">
-              <font-awesome-icon icon="plus-circle" size="2x" />
-              <span class="ml-1" style="vertical-align:super;">many more</span>
-            </div>
-          </div>
-        </div>
           </transition>
         </div>
       </div>
@@ -414,7 +426,7 @@
 
 <script>
 import api from "@API";
-
+import { debounce } from "debounce";
 import "./Index.scss";
 
 export default {
@@ -472,7 +484,23 @@ export default {
 
     onSkillClick(skill) {
       this.openedSkill = skill;
+    },
+
+    handleScroll(event) {
+      this.scrollToPage(this.currentPage);
     }
+  },
+
+  mounted() {
+    document
+      .getElementById("sideContent")
+      .addEventListener("scroll", debounce(this.handleScroll, 500));
+  },
+
+  destroyed() {
+    document
+      .getElementById("sideContent")
+      .removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>

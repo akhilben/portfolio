@@ -150,10 +150,10 @@ button:hover::before {
 .side-content {
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-    -webkit-overflow-scrolling: touch;
+    // scroll-snap-type: mandatory;
+    // scroll-snap-points-y: repeat(100vh);
+    // scroll-snap-type: y mandatory;
+    // -webkit-overflow-scrolling: touch;
 
     @media only screen and (min-width: 768px) {
         margin-left: 50vw;
@@ -1124,4 +1124,8 @@ button:hover::before {
     to {
         transform: translateY(-50vh);
     }
+}
+
+.card-parent {
+    min-height: 70vh;
 }
