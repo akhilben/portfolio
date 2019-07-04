@@ -5,8 +5,8 @@
       <div class="blob1"></div>
       <div class="blob2"></div>
       <div class="blob3"></div>
-      <div class="inner-card" v-bind:class="mainBg">
-        <div class="menu" v-bind:class="{ active: isMenuActive }">
+      <div class="inner-card" v-bind:class="mainBg" v-observe-visibility="mainPageVisible">
+        <div class="menu" v-bind:class="{ active: isMenuActive, fixed:  !mainPageVisibility}">
           <a
             class="icon"
             v-bind:class="{ front: isMenuActive,  back: !isMenuActive}"
@@ -437,7 +437,8 @@ export default {
       isMenuActive: false,
       mainBg: "gradient-blue",
       openedSkill: "frameworks",
-      currentPage: "home"
+      currentPage: "home",
+      mainPageVisibility: true
     };
   },
   methods: {
@@ -448,6 +449,10 @@ export default {
     scrollToPage(page) {
       this.currentPage = page;
       document.getElementById(page).scrollIntoView({ behavior: "smooth" });
+    },
+
+    mainPageVisible(visible) {
+      this.mainPageVisibility = visible;
     },
 
     changeBg(visible) {

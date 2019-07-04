@@ -69,9 +69,10 @@
                 cursor: pointer;
                 color: #ffffff !important;
                 margin-right: 2.5rem;
-                
+
                 svg {
                     transition: transform 0.25s;
+
                     &:hover {
                         transform: translate(0px, -3px);
                     }
@@ -383,7 +384,7 @@ button:hover::before {
                 align-items: stretch;
                 // overflow: hidden;
 
-                min-width: calc(50vw - 3rem);
+                min-width: calc(50vw - 4rem);
 
                 height: 78vh;
 
@@ -818,6 +819,15 @@ button:hover::before {
     position: relative;
 
     .menu {
+
+        @media only screen and (max-width: 768px) {
+            &.fixed {
+                position: fixed;
+                left: 0;
+                top: 6px;
+                z-index: 9;
+            }
+        }
 
         .icon {
             position: absolute;
