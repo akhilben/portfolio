@@ -2,12 +2,13 @@
 
 .main-content {
   height: 100vh;
-  padding: 3rem 0 5rem 3rem;
+  padding: 3rem 0 5rem 0;
   overflow: hidden;
 
   @media only screen and (min-width: 768px) {
       position: fixed;
       width: 50vw;
+      padding-left: 3rem;
   }
 
   .copyright {

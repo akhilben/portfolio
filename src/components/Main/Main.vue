@@ -1,6 +1,5 @@
 <template>
-    <section class="main-content" v-bind:class="mainBg">
-      <!-- <p class="copyright">© Copyright 2019, Akhil Ben.</p> -->
+    <section class="main-content" v-bind:class="mainBg" id="mainPage">
       <div class="blob1"></div>
       <div class="blob2"></div>
       <div class="blob3"></div>
@@ -40,6 +39,10 @@ export default {
     mainBg: {
       required: true,
       type: String
+    },
+    isSmallDevice: {
+      required: true,
+      type: Boolean
     }
   },
 
@@ -52,6 +55,8 @@ export default {
   methods: {
     mainPageVisible(visible) {
       this.mainPageVisibility = visible;
+      if (!visible || !this.$props.isSmallDevice) {return;}
+      this.$emit('scrollToPage', 'mainPage');
     },
 
     scrollToPage(page) {

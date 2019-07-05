@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" id="wrapper">
     <!-- <section class="main-content" v-bind:class="mainBg">
       <p class="copyright">© Copyright 2019, Akhil Ben.</p>
       <div class="blob1"></div>
@@ -76,7 +76,7 @@
         </div>
       </div>
     </section> -->
-    <app-main :mainBg="mainBg" :currentPage="currentPage" @scrollToPage="scrollToPage"></app-main>
+    <app-main :mainBg="mainBg" :currentPage="currentPage" :isSmallDevice="isSmallDevice" @scrollToPage="scrollToPage"></app-main>
     <section class="side-content" id="sideContent">
       <!-- <div class="side-card page1" id="home">
         <div class="blob6"></div>
@@ -454,25 +454,17 @@ export default {
   },
   data() {
     return {
-      isMenuActive: false,
       mainBg: "gradient-blue",
-      openedSkill: "frameworks",
       currentPage: "home",
-      mainPageVisibility: true
+      elementId: "sideContent",
+      isSmallDevice: false
     };
   },
   methods: {
-    onMenuClick() {
-      this.isMenuActive = !this.isMenuActive;
-    },
 
     scrollToPage(page) {
       this.currentPage = page;
       document.getElementById(page).scrollIntoView({ behavior: "smooth" });
-    },
-
-    mainPageVisible(visible) {
-      this.mainPageVisibility = visible;
     },
 
     changePage(event) {
@@ -480,48 +472,26 @@ export default {
       this.mainBg = event.mainBg;
     },
 
-    changeBgToRed(visible) {
-      if (!visible) {
-        return;
-      }
-      this.currentPage = "about";
-      this.mainBg = "gradient-red";
-    },
-
-    changeBgToPurple(visible) {
-      if (!visible) {
-        return;
-      }
-      this.currentPage = "skills";
-      this.mainBg = "gradient-purple";
-    },
-
-    changeBgToCrimson(visible) {
-      if (!visible) {
-        return;
-      }
-      this.currentPage = "projects";
-      this.mainBg = "gradient-crimson";
-    },
-
-    // onSkillClick(skill) {
-    //   this.openedSkill = skill;
-    // },
-
     handleScroll(event) {
       this.scrollToPage(this.currentPage);
     }
   },
 
   mounted() {
+    if(window.innerWidth <= 767) {
+     this.elementId = "wrapper";
+     this.isSmallDevice = true;
+     this.currentPage = 'mainPage';
+   }
+
     document
-      .getElementById("sideContent")
+      .getElementById(this.elementId)
       .addEventListener("scroll", debounce(this.handleScroll, 500));
   },
 
   destroyed() {
     document
-      .getElementById("sideContent")
+      .getElementById(this.elementId)
       .removeEventListener("scroll", this.handleScroll);
   }
 };

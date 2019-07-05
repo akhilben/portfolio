@@ -143,23 +143,30 @@ button:hover::before {
     transform: scaleX(1);
 }
 
+.wrapper {
+    @media only screen and (max-width: 768px) {
+        overflow: auto;
+    }
+
+}
+
 .side-content {
     height: 100vh;
-    overflow: auto;
     // scroll-snap-type: mandatory;
     // scroll-snap-points-y: repeat(100vh);
     // scroll-snap-type: y mandatory;
     // -webkit-overflow-scrolling: touch;
-
+    
     @media only screen and (min-width: 768px) {
         margin-left: 50vw;
+        overflow: auto;
     }
 
     .side-card {
         height: 100vh;
         padding: 3rem 3rem 5rem 0;
         position: relative;
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
 
         @media only screen and (max-width: 768px) {
             padding-right: 0;
