@@ -60,6 +60,9 @@
         </div>
       </transition>
     </div>
+    <div class="footer">
+    <p>© Copyright 2019, Akhil Ben. Made with 🧡 and <a href="https://vuejs.org/">Vue</a>. SVG backgrounds by <a href="https://www.svgbackgrounds.com">SVGBackgrounds.com</a></p>
+    </div>
   </div>
 </template>
 
@@ -89,3 +92,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "./Projects.scss";
+</style>

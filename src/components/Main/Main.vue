@@ -1,6 +1,6 @@
 <template>
     <section class="main-content" v-bind:class="mainBg">
-      <p class="copyright">© Copyright 2019, Akhil Ben.</p>
+      <!-- <p class="copyright">© Copyright 2019, Akhil Ben.</p> -->
       <div class="blob1"></div>
       <div class="blob2"></div>
       <div class="blob3"></div>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import './Main.scss';
+// import './Main.scss';
 import MainMenu from './Menu.vue';
 import MainFooter from './Footer.vue';
 
@@ -60,3 +60,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  @import './Main.scss';
+</style>

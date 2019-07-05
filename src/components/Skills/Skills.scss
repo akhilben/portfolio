@@ -162,7 +162,6 @@
 
             &.active {
                 flex-grow: 10000;
-
                 .ttl {
                     writing-mode: inherit;
                     left: 0;
@@ -184,11 +183,11 @@
                     }
                 }
 
-                .row {
-                    width: 0;
-                    opacity: 0;
-                    visibility: hidden;
-                }
+                // .row {
+                //     width: 0;
+                //     opacity: 0;
+                //     visibility: hidden;
+                // }
             }
         }
     }
