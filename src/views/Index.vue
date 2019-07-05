@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <section class="main-content" v-bind:class="mainBg">
+    <!-- <section class="main-content" v-bind:class="mainBg">
       <p class="copyright">© Copyright 2019, Akhil Ben.</p>
       <div class="blob1"></div>
       <div class="blob2"></div>
@@ -43,14 +43,14 @@
             </ul>
           </nav>
         </div>
-        <!-- <div class="card-content">
+        <div class="card-content">
           <h2 class="sub-ttl">HELLO, I AM</h2>
           <div class="main-ttl">
             <h1 class="first-name">AKHIL</h1>
             <h1 class="last-name">BEN</h1>
           </div>
           <button class="btn-white">Download my CV</button>
-        </div>-->
+        </div>
       </div>
       <div class="footer">
         <div class="w-100">
@@ -75,9 +75,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+    <app-main :mainBg="mainBg" :currentPage="currentPage" @scrollToPage="scrollToPage"></app-main>
     <section class="side-content" id="sideContent">
-      <div class="side-card page1" id="home">
+      <!-- <div class="side-card page1" id="home">
         <div class="blob6"></div>
         <div class="blob7"></div>
         <div class="blob5"></div>
@@ -109,8 +110,11 @@
             </div>
           </transition>
         </div>
-      </div>
-      <div class="side-card page2" id="about">
+      </div> -->
+
+      <app-home :currentPage="currentPage" @changePage="changePage" @scrollToPage="scrollToPage"></app-home>
+
+      <!-- <div class="side-card page2" id="about">
         <div class="blob6"></div>
         <div class="blob7"></div>
         <div class="blob5"></div>
@@ -134,7 +138,6 @@
                     <dd>Cubet</dd>
                   </dl>
                 </div>
-                <!-- <div class="test">ABOUT ME</div> -->
                 <hr class="my-4" />
                 <p class="animated ease fadeIn delay-1s">
                   I am a front-end engineer from Kochi, India with
@@ -160,9 +163,11 @@
             </div>
           </transition>
         </div>
-      </div>
+      </div> -->
+      
+      <app-about :currentPage="currentPage" @changePage="changePage"></app-about>
 
-      <div class="side-card page3" id="skills">
+      <!-- <div class="side-card page3" id="skills">
         <div class="blob6"></div>
         <div class="blob7"></div>
         <div class="blob5"></div>
@@ -352,13 +357,14 @@
                   </a>
                 </div>
               </div>
-              <!-- </div> -->
             </div>
           </transition>
         </div>
-      </div>
+      </div> -->
 
-      <div class="side-card page4" id="projects">
+      <app-skills :currentPage="currentPage" @changePage="changePage"></app-skills>
+
+      <!-- <div class="side-card page4" id="projects">
         <div class="blob6"></div>
         <div class="blob7"></div>
         <div class="blob5"></div>
@@ -419,19 +425,33 @@
             </div>
           </transition>
         </div>
-      </div>
+      </div> -->
+
+      <app-projects :currentPage="currentPage" @changePage="changePage"></app-projects>
+
     </section>
   </div>
 </template>
 
 <script>
-import api from "@API";
 import { debounce } from "debounce";
+
+import AppMain from "@Component/Main/Main.vue";
+import AppHome from "@Component/Home/Home.vue";
+import AppAbout from "@Component/About/About.vue";
+import AppSkills from "@Component/Skills/Skills.vue";
+import AppProjects from "@Component/Projects/Projects.vue";
 import "./Index.scss";
 
 export default {
   name: "Index",
-  components: {},
+  components: {
+    AppMain,
+    AppHome,
+    AppAbout,
+    AppSkills,
+    AppProjects
+  },
   data() {
     return {
       isMenuActive: false,
@@ -455,12 +475,9 @@ export default {
       this.mainPageVisibility = visible;
     },
 
-    changeBg(visible) {
-      if (!visible) {
-        return;
-      }
-      this.currentPage = "home";
-      this.mainBg = "gradient-blue";
+    changePage(event) {
+      this.currentPage = event.currentPage;
+      this.mainBg = event.mainBg;
     },
 
     changeBgToRed(visible) {
@@ -487,9 +504,9 @@ export default {
       this.mainBg = "gradient-crimson";
     },
 
-    onSkillClick(skill) {
-      this.openedSkill = skill;
-    },
+    // onSkillClick(skill) {
+    //   this.openedSkill = skill;
+    // },
 
     handleScroll(event) {
       this.scrollToPage(this.currentPage);

@@ -1,0 +1,51 @@
+// @import '@MasterStyle';
+
+.main-content {
+  height: 100vh;
+  padding: 3rem 0 5rem 3rem;
+  overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+      position: fixed;
+      width: 50vw;
+  }
+
+  .copyright {
+      writing-mode: vertical-lr;
+      position: absolute;
+      left: 0;
+      top: 33%;
+      font-size: small;
+      color: #fffc;
+  }
+
+
+  .card-content {
+      text-align: center;
+      color: #FFFFFF;
+
+      .sub-ttl {
+          font-weight: 300;
+          font-size: 1.75rem;
+          letter-spacing: 1px;
+      }
+
+      .main-ttl {
+          margin: 4rem 0;
+          font-family: 'Kilogram';
+          line-height: initial;
+
+          .first-name {
+              font-size: 4.5rem;
+              line-height: initial;
+              margin-bottom: 0;
+          }
+
+          .last-name {
+              font-size: 6rem;
+              line-height: initial;
+              margin-bottom: 0;
+          }
+      }
+  }
+}

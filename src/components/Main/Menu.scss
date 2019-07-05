@@ -1,0 +1,112 @@
+.menu {
+
+    @media only screen and (max-width: 768px) {
+        &.fixed {
+            position: fixed;
+            left: 0;
+            top: 6px;
+            z-index: 9;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 9px 10px;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        transform: rotate(0deg);
+        transition: 1s transform;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
+
+        &:hover {
+            transform: translate(0px, -3px);
+        }
+
+        &.front {
+            transform: rotate(360deg);
+        }
+
+        &.back {
+            transform: rotate(0deg);
+        }
+    }
+
+    nav {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 0;
+        background: #FFFFFF;
+        transition: 1s all;
+        z-index: 1;
+
+        ul {
+            padding: 2rem 0 4rem 5rem;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.4s ease-in, visibility 0.3s linear;
+
+            li {
+                margin: 1.85rem;
+                font-size: 1.65rem;
+                font-weight: 600;
+
+                a {
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 1;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        // background-image: linear-gradient(90deg, #2C66ED 0%, #30CDE3 100%);
+                        top: 0;
+                        bottom: 0;
+                        left: -0.25em;
+                        right: -0.25em;
+                        transform-origin: center right;
+                        transform: scaleX(0);
+                        transition: transform 0.2s ease-in-out;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: #ffffff !important;
+
+                        &::before {
+                            transform: scaleX(1);
+                            transform-origin: center left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        nav {
+            border-radius: 0 0 300px 0;
+            display: block;
+            width: 70vw;
+
+            ul {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            @media only screen and (min-width: 768px) {
+                width: 35vw;
+            }
+        }
+    }
+
+
+}

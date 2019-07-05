@@ -1,0 +1,81 @@
+.page2 {
+    background-color: #da1f49;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='9' height='9' fill='%23ff2959'/%3E%3C/svg%3E");
+
+    .blob4,
+    .blob5,
+    .blob6,
+    .blob7 {
+        background-image: linear-gradient(270deg, #d11e46 0%, #ff7059 100%);
+    }
+
+    .inner-card {
+        background: #da2049;
+        border-left: 0;
+
+        .page-ttl {
+            color: #c11f43;
+            position: absolute;
+            font-size: 14vw;
+            z-index: 0;
+        }
+
+        @media only screen and (max-width: 1048px) {
+            font-size: small;
+        }
+
+        .card-wrapper {
+            padding: 0 1.5rem;
+            z-index: 1;
+
+            @media only screen and (min-width: 768px) {
+                padding: 0 3rem;
+            }
+        }
+
+        hr {
+            width: 30%;
+            border-top: 3px solid #ffffff;
+        }
+
+        p {
+            color: #ffffff;
+            line-height: 20px;
+
+            @media only screen and (min-width: 1048px) {
+                line-height: 40px;
+            }
+
+            a {
+                background: -webkit-linear-gradient(180deg, #d11e46 0%, #ff7059 100%);
+                font-weight: 900;
+                cursor: pointer;
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+
+        .short-description {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            -webkit-animation: shake-up 1s infinite alternate;
+            animation: shake-up 1s infinite alternate;
+
+            dl {
+                text-align: center;
+                color: #ffffff;
+
+                dd {
+                    background-color: #ffffff;
+                    padding: 0.2rem 0.65rem;
+                    border-radius: 18px;
+                    color: #da2049;
+                    font-size: small;
+                    box-shadow: #3938381a 0 0px 6px 5px;
+                }
+            }
+        }
+    }
+
+}
