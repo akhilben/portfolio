@@ -14,13 +14,13 @@
                 <div class="project-card">
                   <div class="card-head">
                     <picture>
-                      <img src="src/assets/images/quorra.png" alt />
+                      <img :src="require('@/assets/images/quorra.png')" alt />
                     </picture>
                     <h6 class="m-0">Quorra Js</h6>
                   </div>
 
                   <div class="card-content">
-                    <p>A is a full fledged, open-source MVC NodeJS framework inspired by Laravel.</p>
+                    <p>A full fledged, open-source MVC NodeJS framework inspired by Laravel.</p>
                     <div class="card-links">
                       <a rel="noopener" target="_blank" href="https://github.com/quorrajs">
                         <font-awesome-icon :icon="['fab', 'github']" />
@@ -36,7 +36,7 @@
                 <div class="project-card">
                   <div class="card-head">
                     <picture>
-                      <img src="src/assets/images/taskpod.png" alt />
+                      <img :src="require('@/assets/images/taskpod.png')" alt />
                     </picture>
                     <h6 class="m-0">Taskpod</h6>
                   </div>

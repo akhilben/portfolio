@@ -8,16 +8,26 @@
           target="_blank"
           href="https://github.com/akhilben"
         >
-          <font-awesome-icon :icon="['fab', 'github']" size="2x" />
+          <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
         </a>
-        <a class="animated ease fadeInLeft delay-1-5s">
-          <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" />
+        <a
+          class="animated ease fadeInLeft delay-1-5s"
+          rel="noopener"
+          target="_blank"
+          href="https://www.linkedin.com/in/akhilben"
+        >
+          <font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/>
         </a>
-        <a class="animated ease fadeInLeft delay-1s">
-          <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
+        <a
+          class="animated ease fadeInLeft delay-1s"
+          rel="noopener"
+          target="_blank"
+          href="https://www.facebook.com/akhilben"
+        >
+          <font-awesome-icon :icon="['fab', 'facebook']" size="2x"/>
         </a>
-        <a class="animated ease fadeInLeft delay-0-5s">
-          <font-awesome-icon icon="envelope" size="2x" />
+        <a class="animated ease fadeInLeft delay-0-5s" href="mailto:hello@akhil.dev">
+          <font-awesome-icon icon="envelope" size="2x"/>
         </a>
       </div>
     </div>

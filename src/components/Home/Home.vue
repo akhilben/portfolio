@@ -11,7 +11,7 @@
             <picture>
               <img
                 class="animated ease fadeIn delay-0-3s"
-                src="src/assets/images/avataaars.svg"
+                :src="require('@/assets/images/avataaars.svg')"
                 alt="me"
               />
             </picture>

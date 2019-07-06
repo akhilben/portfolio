@@ -8,7 +8,7 @@
       <div v-for="(skill, index) in skillSet.skills" :key="index" class="col-6 col-md-12 col-lg-6 my-4 text-center animated ease fadeInDown">
         <a class="pills" rel="noopener" target="_blank" href="https://www.sketch.com/">
           <font-awesome-icon v-if="skill.fontAwesomeIcon" :icon="['fab', skill.icon]" />
-          <img v-if="!skill.fontAwesomeIcon" :src="skill.icon" height="16px" :style="skill.style"/>{{skill.name}}
+          <img v-if="!skill.fontAwesomeIcon" :src="require('@/assets/images/' + skill.icon)" height="16px" :style="skill.style"/>{{skill.name}}
         </a>
       </div>
     </div>

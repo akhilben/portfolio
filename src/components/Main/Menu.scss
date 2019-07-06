@@ -53,6 +53,10 @@
             visibility: hidden;
             transition: opacity 1.4s ease-in, visibility 0.3s linear;
 
+            @media only screen and (max-width: 768px) {
+                padding-left: 2rem;
+            }
+
             li {
                 margin: 1.85rem;
                 font-size: 1.65rem;
@@ -95,15 +99,15 @@
         nav {
             border-radius: 0 0 300px 0;
             display: block;
-            width: 70vw;
+            width: 35vw;
 
             ul {
                 opacity: 1;
                 visibility: visible;
             }
 
-            @media only screen and (min-width: 768px) {
-                width: 35vw;
+            @media only screen and (max-width: 768px) {
+                width: 90vw;
             }
         }
     }
