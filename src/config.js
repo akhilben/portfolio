@@ -26,6 +26,6 @@ export const APIConfig = {
 /**
  * GOOGLE ANALYTICS PART
  */
-export const enableAnalytics = true;
+export const enableAnalytics = false;
 export const analyticsKey = 'UA-XXX-X';
 export const disableAnalyticsInDebug = true;

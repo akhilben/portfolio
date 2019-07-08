@@ -62,6 +62,8 @@ export default {
   },
 
   mounted() {
+    console.log("%cHire Me Please! 🙏😔", "background-image: linear-gradient(blue, red); color: white; font-size: xx-large; padding: 10px");
+
     if(window.innerWidth <= 767) {
      this.elementId = "wrapper";
      this.isSmallDevice = true;
