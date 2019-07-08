@@ -23,7 +23,7 @@
 <script>
 import MainMenu from './Menu.vue';
 import MainFooter from './Footer.vue';
-import CV from '@Asset/CV.pdf';
+import CV from '@Asset/cv.pdf';
 
 export default {
   name: 'Main',
