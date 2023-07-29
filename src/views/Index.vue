@@ -1,18 +1,33 @@
 <template>
   <div class="wrapper" id="wrapper">
+    <app-main
+      :mainBg="mainBg"
+      :currentPage="currentPage"
+      :isSmallDevice="isSmallDevice"
+      @scrollToPage="scrollToPage"
+    ></app-main>
 
-    <app-main :mainBg="mainBg" :currentPage="currentPage" :isSmallDevice="isSmallDevice" @scrollToPage="scrollToPage"></app-main>
-    
     <section class="side-content" id="sideContent">
+      <app-home
+        :currentPage="currentPage"
+        @changePage="changePage"
+        @scrollToPage="scrollToPage"
+      ></app-home>
 
-      <app-home :currentPage="currentPage" @changePage="changePage" @scrollToPage="scrollToPage"></app-home>
-      
-      <app-about :currentPage="currentPage" @changePage="changePage"></app-about>
+      <app-about
+        :currentPage="currentPage"
+        @changePage="changePage"
+      ></app-about>
 
-      <app-skills :currentPage="currentPage" @changePage="changePage"></app-skills>
+      <app-skills
+        :currentPage="currentPage"
+        @changePage="changePage"
+      ></app-skills>
 
-      <app-projects :currentPage="currentPage" @changePage="changePage"></app-projects>
-
+      <app-projects
+        :currentPage="currentPage"
+        @changePage="changePage"
+      ></app-projects>
     </section>
   </div>
 </template>
@@ -34,18 +49,17 @@ export default {
     AppHome,
     AppAbout,
     AppSkills,
-    AppProjects
+    AppProjects,
   },
   data() {
     return {
       mainBg: "gradient-blue",
       currentPage: "home",
       elementId: "sideContent",
-      isSmallDevice: false
+      isSmallDevice: false,
     };
   },
   methods: {
-
     scrollToPage(page) {
       this.currentPage = page;
       document.getElementById(page).scrollIntoView({ behavior: "smooth" });
@@ -58,17 +72,20 @@ export default {
 
     handleScroll(event) {
       this.scrollToPage(this.currentPage);
-    }
+    },
   },
 
   mounted() {
-    console.log("%cHire Me Please! 🙏😔", "background-image: linear-gradient(blue, red); color: white; font-size: xx-large; padding: 10px");
+    console.log(
+      "%cI'm Open to jobs! 😃",
+      "background-image: linear-gradient(blue, red); color: white; font-size: xx-large; padding: 10px"
+    );
 
-    if(window.innerWidth <= 767) {
-     this.elementId = "wrapper";
-     this.isSmallDevice = true;
-     this.currentPage = 'mainPage';
-   }
+    if (window.innerWidth <= 767) {
+      this.elementId = "wrapper";
+      this.isSmallDevice = true;
+      this.currentPage = "mainPage";
+    }
 
     document
       .getElementById(this.elementId)
@@ -79,6 +96,6 @@ export default {
     document
       .getElementById(this.elementId)
       .removeEventListener("scroll", this.handleScroll);
-  }
+  },
 };
 </script>
